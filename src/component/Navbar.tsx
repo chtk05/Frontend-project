@@ -1,5 +1,9 @@
+import { Link } from 'react-router-dom'
 import classes from './Navbar.module.css'
+import { useAuth } from '../providers/AuthProvider'
+
 const Navbar = () => {
+  const { isLoggedIn, logout } = useAuth()
   return (
     <div className={classes.navcard}>
       <div className={classes.menu}>
@@ -17,8 +21,13 @@ const Navbar = () => {
         <h3 className={classes.title}>LearnHub </h3>
       </div>
       <div>
-        <button>Login</button>
-        <button>Register</button>
+        {isLoggedIn ? (
+          <button onClick={logout}>Logout</button>
+        ) : (
+          <Link to="/login" className={classes.loginBtn}>
+            Login
+          </Link>
+        )}
       </div>
     </div>
   )
