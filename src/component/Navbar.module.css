@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&family=Nanum+Gothic:wght@400;700&family=Noto+Sans+NKo+Unjoined&display=swap');
-
+body {
+  font-family: 'Manrope', sans-serif;
+}
 .navcard {
   background-color: #dfa878;
   width: 100%;
@@ -31,4 +33,18 @@
   font-size: 25px;
   font-family: 'Manrope', sans-serif;
   font-weight: bolder;
+}
+
+.loginBtn {
+  text-decoration: none;
+  color: #6c3428;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.loginBtn:hover {
+  background-color: bisque;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 3px;
 }
