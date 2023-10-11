@@ -6,7 +6,7 @@ body {
   background-color: #dfa878;
   width: 100%;
   height: auto;
-  padding: 0px 20px;
+  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,6 +33,7 @@ body {
   font-size: 25px;
   font-family: 'Manrope', sans-serif;
   font-weight: bolder;
+  text-decoration: none;
 }
 
 .loginBtn {
@@ -47,4 +48,16 @@ body {
   padding: 8px 10px;
   border: none;
   border-radius: 3px;
+}
+
+.navlink {
+  color: #6c3428;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 20px;
+}
+.navright {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
