@@ -15,6 +15,8 @@ export interface PostDTO {
   creatorName: string
   creatorUrl: string
   postedBy: userDTO
+  createdAt: string
+  updatedAt: string
 }
 
 export interface ContentsDTO {
@@ -28,4 +30,10 @@ export interface LoginDTO {
 
 export interface CredentialDTO {
   accessToken: string
+}
+
+export interface CreateContentDTO {
+  videoUrl: string
+  comment: string
+  rating: number | null
 }
