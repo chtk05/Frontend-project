@@ -5,7 +5,7 @@ import useCreateVideo from '../hooks/useCreateVideo'
 const CreateConTent = () => {
   const [newVideo, setNewVideo] = useState<string>('')
   const [newComment, setComment] = useState<string>('')
-  const [newRating, setRating] = useState<number>(0)
+  const [newRating, setRating] = useState<number | null>(null)
   const { fetchPost } = useCreateVideo()
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -18,9 +18,9 @@ const CreateConTent = () => {
       console.log(err)
     }
   }
-  const handleChange = (_event: React.ChangeEvent<number>, newValue: number) => {
-    setRating(newValue)
-  }
+  // const handleChange = (_event: React.ChangeEvent<number>, newValue: number) => {
+  //   setRating(newValue)
+  // }
   return (
     <>
       <h3>Create new content</h3>
@@ -43,7 +43,12 @@ const CreateConTent = () => {
           required
           value={newComment}
         />
-        <Rating value={newRating} onChange={handleChange} />
+        <Rating
+          value={newRating}
+          onChange={(_, value) => {
+            setRating(value)
+          }}
+        />
         <button type="submit">Create Content</button>
       </form>
     </>

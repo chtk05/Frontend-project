@@ -35,5 +35,5 @@ export interface CredentialDTO {
 export interface CreateContentDTO {
   videoUrl: string
   comment: string
-  rating: number
+  rating: number | null
 }

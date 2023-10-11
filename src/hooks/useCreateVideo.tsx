@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const useCreateVideo = () => {
   const token = localStorage.getItem('token')
   const navigate = useNavigate()
-  const fetchPost = async (videoUrl: string, comment: string, rating: number) => {
+  const fetchPost = async (videoUrl: string, comment: string, rating: number | null) => {
     const contentBody: CreateContentDTO = {
       videoUrl,
       comment,
