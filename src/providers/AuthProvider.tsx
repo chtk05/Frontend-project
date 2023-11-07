@@ -30,7 +30,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   const login = async (username: string, password: string) => {
     const loginBody: LoginDTO = { username, password }
     try {
-      const response = await axios.post<CredentialDTO>('https://api.learnhub.thanayut.in.th/auth/login', loginBody, {
+      const response = await axios.post<CredentialDTO>('http://localhost:8080/auth/login', loginBody, {
         headers: { 'Content-Type': 'application/json' },
       })
       localStorage.setItem('token', response.data.accessToken)

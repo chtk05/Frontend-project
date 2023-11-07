@@ -14,7 +14,7 @@ const useCreateVideo = () => {
     }
 
     try {
-      const response = await axios.post<PostDTO>('https://api.learnhub.thanayut.in.th/content', contentBody, {
+      const response = await axios.post<PostDTO>('http://localhost:8080/content', contentBody, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

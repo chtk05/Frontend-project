@@ -7,7 +7,7 @@ const usePost = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<ContentsDTO>('https://api.learnhub.thanayut.in.th/content')
+        const response = await axios.get<ContentsDTO>('http://localhost:8080/content')
         console.log(response.data)
         setPosts(response.data)
       } catch (err) {

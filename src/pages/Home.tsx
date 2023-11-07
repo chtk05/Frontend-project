@@ -28,7 +28,7 @@ const Home = () => {
         }}
       >
         {posts &&
-          posts.data.map((content) => {
+          posts.map((content) => {
             return <Post key={content.id} post={content} />
           })}
       </Box>
