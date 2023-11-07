@@ -1,16 +1,15 @@
-.container {
-  display: flex;
-  flex-direction: column;
+/* .container {
   align-items: center;
-
+  box-sizing: border-box;
   gap: 20px;
-  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-/* .feedContainer {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
+.feed {
+  max-width: 80%;
+  background-color: antiquewhite;
   width: 100%;
+  gap: 20px;
 } */

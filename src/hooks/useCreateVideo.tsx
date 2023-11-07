@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const useCreateVideo = () => {
   const token = localStorage.getItem('token')
+  //   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   const navigate = useNavigate()
   const fetchPost = async (videoUrl: string, comment: string, rating: number | null) => {
     const contentBody: CreateContentDTO = {
@@ -11,6 +12,7 @@ const useCreateVideo = () => {
       comment,
       rating,
     }
+
     try {
       const response = await axios.post<PostDTO>('https://api.learnhub.thanayut.in.th/content', contentBody, {
         headers: {
@@ -25,6 +27,7 @@ const useCreateVideo = () => {
       navigate('/')
     }
   }
+
   return { fetchPost }
 }
 
