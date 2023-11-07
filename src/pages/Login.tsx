@@ -22,7 +22,7 @@ const Login = () => {
   }
 
   return (
-    <div className="{classes.loginForm}">
+    <div className={classes.loginForm}>
       <form onSubmit={handleSubmit}>
         <svg
           id="Layer_1"

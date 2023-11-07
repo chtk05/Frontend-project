@@ -1,5 +1,4 @@
 import { PostDTO } from '../types/dto'
-import ReactPlayer from 'react-player'
 import Rating from '@mui/material/Rating'
 import classes from './Post.module.css'
 import { Link } from 'react-router-dom'
@@ -21,7 +20,8 @@ const Post = ({ post }: PostProps) => {
     >
       <Link to={`/content/${post.id}`} style={{ textDecoration: 'none', color: 'grey' }}>
         {' '}
-        <ReactPlayer url={post.videoUrl} className={classes.player} width="400px" height="300px" />
+        {/* <ReactPlayer url={post.thumbnailUrl} className={classes.player} width="400px" height="300px" /> */}
+        <img src={post.thumbnailUrl} alt="viedoYt" />
         <div className={classes.contentBox}>
           <div>
             <h4>{post.videoTitle}</h4>
@@ -30,7 +30,7 @@ const Post = ({ post }: PostProps) => {
           </div>
 
           <div className={classes.belowBox}>
-            <p>{post.postedBy.username}</p>
+            <p>{post.User.username}</p>
             <Rating value={post.rating} readOnly className={classes.starBox} />
           </div>
         </div>

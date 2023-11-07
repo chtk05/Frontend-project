@@ -6,7 +6,7 @@ import Rating from '@mui/material/Rating'
 import { Link } from 'react-router-dom'
 const VideoDetails = () => {
   const { id } = useParams()
-  const { posts, isLoading } = usePostIdeal(id || '1')
+  const { posts, isLoading, deleteContent } = usePostIdeal(id || '1')
   if (isLoading) return <h1>Loading....</h1>
   return (
     <div className={classes.container}>
@@ -35,10 +35,21 @@ const VideoDetails = () => {
             <p className={classes.commentText}> {posts.comment}</p>
             <div className={classes.commentRight}>
               <Rating value={posts.rating} readOnly />
-              <p>{posts.postedBy.username}</p>
+              <p>{posts.User.username}</p>
               <p>{posts.createdAt}</p>
             </div>
-            <Link to={`/content/edit/${posts.id}`}>Edit</Link>
+            <div>
+              {localStorage.getItem('username') === posts.User.username ? (
+                <Link to={`/content/edit/${posts.id}`}>Edit</Link>
+              ) : (
+                <Link to="/login"></Link>
+              )}
+              {localStorage.getItem('username') === posts.User.username ? (
+                <>{<button onClick={deleteContent}>Delete</button>}</>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </>
       )}

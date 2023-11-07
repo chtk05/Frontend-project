@@ -14,14 +14,12 @@ export interface PostDTO {
   thumbnailUrl: string
   creatorName: string
   creatorUrl: string
-  postedBy: userDTO
+  User: userDTO
   createdAt: string
   updatedAt: string
 }
 
-export interface ContentsDTO {
-  data: PostDTO[]
-}
+export type ContentsDTO = PostDTO[]
 
 export interface LoginDTO {
   username: string
