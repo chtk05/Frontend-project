@@ -3,7 +3,7 @@ import usePostIdeal from '../hooks/usePostIdeal'
 import classes from './VideoDetails.module.css'
 import ReactPlayer from 'react-player'
 import Rating from '@mui/material/Rating'
-
+import { Link } from 'react-router-dom'
 const VideoDetails = () => {
   const { id } = useParams()
   const { posts, isLoading } = usePostIdeal(id || '1')
@@ -38,6 +38,7 @@ const VideoDetails = () => {
               <p>{posts.postedBy.username}</p>
               <p>{posts.createdAt}</p>
             </div>
+            <Link to={`/content/edit/${posts.id}`}>Edit</Link>
           </div>
         </>
       )}

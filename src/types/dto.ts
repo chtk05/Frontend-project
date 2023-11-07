@@ -37,3 +37,8 @@ export interface CreateContentDTO {
   comment: string
   rating: number | null
 }
+
+export interface UpdateContentDTO {
+  comment: string
+  rating: number | null
+}
